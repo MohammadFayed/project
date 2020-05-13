@@ -351,12 +351,12 @@
                                     </div>
                                     <div class="radio row col-sm-12">
                                         <label  >Statue yoer father :</label>
-                                            <label class="text col-sm-12">
+                                            <label class="text col">
                                                 <input type="radio" name="statue" value="Dead" />
                                                 <span class="design"></span>
                                                 <span class="text">Dead</span>
                                             </label>
-                                            <label  class="text col-sm-12">
+                                            <label  class="text col">
                                                 <input type="radio" name="statue" value="A Live" />
                                                 <span class="design"></span>
                                                 <span class="text">Live</span>

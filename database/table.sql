@@ -44,8 +44,6 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `user` (`user_id`, `fullname`, `email`, `password`, `statue`, `gender`, `stage`, `groub_id`, `date`) VALUES (NULL, 'fatma farag', 'fatma@science.tanta.edu.eg', 'bac5be9173484ac9062d8a75ceb7a6d1', 'new', 'female', '0', '0', '2020-05-12 17:16:37')
-INSERT INTO `user` (`user_id`, `fullname`, `email`, `password`, `statue`, `gender`, `stage`, `groub_id`, `date`) VALUES (NULL, 'fatma farag', 'fatma@science.tanta.edu.eg', 'bac5be9173484ac9062d8a75ceb7a6d1', 'new', 'female', '0', '1', '2020-05-12 17:16:37')
-
 --
 -- Dumping data for table `order`
 --
