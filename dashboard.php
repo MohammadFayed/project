@@ -29,7 +29,7 @@ session_start();
                     for($i = 1; $i <= count($stage_student);$i++){
                         if($stage_student[$i] == "accepte"){
                             $conn = new db();
-                            $update_stage_user = $conn->update("UPDATE user SET stage = 1 WHERE user_id =".$student_by_id[$i]);
+                            $update_stage_user = $conn->update("UPDATE user SET stage = 2 WHERE user_id =".$student_by_id[$i]);
                             $update_stage_order = $conn->update("UPDATE `order` SET stage = 1 WHERE student_id =".$student_by_id[$i]);
                                 if($update_stage_user > 0){
                                     $name_student = $conn->select("SELECT fullname FROM user WHERE user_id = ".$student_by_id[$i]);
@@ -38,6 +38,7 @@ session_start();
                         }else{
                             $conn = new db();
                             $delet_order_student = $conn->delete("DELETE FROM `order` WHERE student_id =".$student_by_id[$i]);
+                            $set_stage_minus = $conn->update("UPDATE user SET stage = '-1' WHERE user_id =".$student_by_id[$i]);
                                 if($delet_order_student > 0){
                                     $name_student = $conn->select("SELECT fullname FROM user WHERE user_id = ".$student_by_id[$i]);
                                     alert("warning text-center pl-4",$name_student['fullname'],"was refused");
@@ -71,7 +72,7 @@ session_start();
                                     </p>
                                 </div>
                                 <div class="stat col text-center">
-                                    <h4>Students with special needs</h4>
+                                    <h4>Students whose father died</h4>
                                     <hr />
                                     <p>
                                         <?php 
@@ -81,7 +82,7 @@ session_start();
                                     </p>
                                 </div>
                                 <div class="stat col text-center">
-                                    <h4>Students whose father died</h4>
+                                    <h4>Students with special needs</h4>
                                     <hr />
                                     <p>
                                         <?php 

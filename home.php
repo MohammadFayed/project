@@ -31,11 +31,16 @@ else:
             <?php 
             $conn= new db();
             $check_stage = $conn->select("SELECT stage FROM user WHERE user_id = ?",array($_SESSION['id']));
+            $check_delated = $conn->select("SELECT stage FROM `order` WHERE student_id = ?",array($_SESSION['id']));
             $stage = $check_stage['stage'];
                 if($stage == 0):
                     alert("primary text-center p-4","Welcome ".$_SESSION['fullname'],"You are not registered in the university city yet");
                 elseif($stage == 1):
                     alert("warning text-center p-4","Welcome ".$_SESSION['fullname'],"You have requested to reside in the university city of Tanta, and it is now being reviewed with the officials according to the conditions","Please come at another time");
+                elseif($stage == 2):
+                    alert("success text-center p-4","Congratulations  ".$_SESSION['fullname'],"You were accepted in the first stage of applying to the university city of Tanta","Complete your remaining information and wait for the official until approval <a href='#'>from here</a>");
+                else: 
+                    alert("danger text-center p-4","Bad message ".$_SESSION['fullname'],"Your application was refused for residence in the university city of Tanta");
                 endif;
             ?>
         </div>
